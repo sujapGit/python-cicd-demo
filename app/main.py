@@ -11,6 +11,23 @@ def add_route():
     b = float(request.args.get("b"))
     return jsonify({"result": add(a, b)})
 
+@app.route("/substract",methods=["GET"])
+def susbtract_route():
+    a = float(request.args.get("a"))
+    b = float(request.args.get("b"))
+    return jsonify({"result": substract(a,b)})
+
+@app.route("/multiply",methods =["GET"])
+def multiply_route():
+    a = float(request.args.get("a"))
+    b = float(request.args.get("b"))
+    return jsonify({"result": multiply(a,b)})
+
+@app.route("/divide",methods=["GET"])
+def divide_route():
+    a = float(request.args.get("a"))
+    b = float(request.args.get("b"))
+    return jsonify({"result": divide(a,b)})
 
 if __name__ == "__main__":
     app.run(debug=True)
